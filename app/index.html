@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Snowflake generator</title>
+    <title>Snowflake fractal generator</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="resources/css/reset-css.css">
     <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
@@ -10,7 +10,13 @@
 
 <body>
     <main>
-		<h1>Snowflake generator</h1>
+		<h1>Snowflake fractal generator</h1>
+		<form>
+			<div>
+                Iterations:
+                <input id="iterations" type="number" value="4">
+            </div>
+		</form>
         <canvas id="snowflake-generator"></canvas>
     </main>
 
@@ -21,4 +27,4 @@
 	<script src="resources/js/snowflake-generator.js"></script>
 </body>
 
-</html>     
+</html>
