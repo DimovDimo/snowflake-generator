@@ -1,14 +1,22 @@
-let canvas = getCanvas();
-let snowflake = getSnowflake(canvas);
+(function () {
+    let container = document.getElementById("container");
+    container.addEventListener("change", change);
+}());
 
-let iterations = getIterations();
+function change() {
+    let canvas = getCanvas();
+    let snowflake = getSnowflake(canvas);
+    let iterations = getIterations();
+}
+
+change();
 
 function getCanvas(){
-    return document.getElementById('snowflake-generator');
+    return document.getElementById("snowflake-generator");
 }
 
 function getSnowflake(canvas){
-    return canvas.getContext('2d');
+    return canvas.getContext("2d");
 }
 
 function getIterations(){
