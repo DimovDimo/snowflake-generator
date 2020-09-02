@@ -1,3 +1,5 @@
+const splitsConstant = 2;
+
 (function () {
     let container = document.getElementById("container");
     container.addEventListener("change", change);
