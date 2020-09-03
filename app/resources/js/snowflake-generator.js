@@ -1,13 +1,16 @@
 const splitsConstant = 2;
 
-(function () {
+function changeEvent() {
     let container = document.getElementById("container");
     container.addEventListener("change", change);
-}());
+};
+
+changeEvent();
 
 function change() {
     let canvas = getCanvas();
     let snowflake = getSnowflake(canvas);
+	setCanvasSize(canvas);
     let iterations = getIterations();
 }
 
@@ -23,4 +26,9 @@ function getSnowflake(canvas){
 
 function getIterations(){
     return document.getElementById("iterations").value;
+}
+
+function setCanvasSize(canvas){	
+	canvas.width = document.getElementById("width").value;
+    canvas.height = document.getElementById("height").value;
 }
