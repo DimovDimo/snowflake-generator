@@ -9,10 +9,14 @@ changeEvent();
 
 function change() {
     let canvas = getCanvas();
-    let snowflake = getSnowflake(canvas);
 	setCanvasSize(canvas);
+	
+    let snowflake = getSnowflake(canvas);
+	centerSnowflake(canvas, snowflake);
+	
     let iterations = getIterations();
 	let splits = getSplits();
+	let angle = getAngle();
 }
 
 change();
@@ -47,4 +51,8 @@ function getIterations(){
 
 function getSplits(){
     return document.getElementById("splits").value;
+}
+
+function getAngle(){
+    return document.getElementById("angle").value;
 }
