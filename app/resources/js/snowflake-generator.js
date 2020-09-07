@@ -50,7 +50,9 @@ function getIterations(){
 }
 
 function getSplits(){
-    return document.getElementById("splits").value;
+	let splits = document.getElementById("splits").value;
+	
+    return ++splits;
 }
 
 function getAngle(){
