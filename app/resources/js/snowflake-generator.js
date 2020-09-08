@@ -12,7 +12,7 @@ function change() {
 	setCanvasSize(canvas);
 	
     let snowflake = getSnowflake(canvas);
-	centerSnowflake(canvas, snowflake);
+	snowflakeStyle(canvas, snowflake);
 	
     let iterations = getIterations();
 	let splits = getSplits();
@@ -57,4 +57,14 @@ function getSplits(){
 
 function getAngle(){
     return document.getElementById("angle").value;
+}
+
+function snowflakeStyle(canvas, snowflake) {
+	centerSnowflake(canvas, snowflake);
+	
+    snowflake.fillStyle = getBackgroundColor();
+}
+
+function getBackgroundColor(){
+    return document.getElementById("background").value;
 }
