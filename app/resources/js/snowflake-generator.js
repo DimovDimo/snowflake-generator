@@ -61,10 +61,19 @@ function getAngle(){
 
 function snowflakeStyle(canvas, snowflake) {
 	centerSnowflake(canvas, snowflake);
-	
-    snowflake.fillStyle = getBackgroundColor();
+	setBackgroundColor(canvas, snowflake);
 }
 
 function getBackgroundColor(){
     return document.getElementById("background").value;
+}
+
+function setBackgroundColor(canvas, snowflake){
+	snowflake.fillStyle = getBackgroundColor();
+	
+	xCoordinate = -canvas.width;
+	yCoordinate = -canvas.height;
+	width = canvas.width * centerLengthConstant;
+	height = canvas.height * centerLengthConstant;	
+	snowflake.fillRect(xCoordinate, yCoordinate, width, height);	
 }
