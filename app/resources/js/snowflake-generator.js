@@ -17,6 +17,7 @@ function change() {
     let iterations = getIterations();
 	let splits = getSplits();
 	let angle = getAngle();
+	let rays = getRays();
 }
 
 change();
@@ -76,4 +77,8 @@ function setBackgroundColor(canvas, snowflake){
 	width = canvas.width * centerLengthConstant;
 	height = canvas.height * centerLengthConstant;	
 	snowflake.fillRect(xCoordinate, yCoordinate, width, height);	
+}
+
+function getRays(){
+    return document.getElementById("rays").value;
 }
