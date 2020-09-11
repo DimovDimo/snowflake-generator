@@ -82,3 +82,7 @@ function setBackgroundColor(canvas, snowflake){
 function getRays(){
     return document.getElementById("rays").value;
 }
+
+function snowflakeRotate(snowflake, rays){
+    snowflake.rotate((centerLengthConstant * Math.PI) / rays);;
+}
