@@ -63,6 +63,7 @@ function getAngle(){
 function snowflakeStyle(canvas, snowflake) {
 	centerSnowflake(canvas, snowflake);
 	setBackgroundColor(canvas, snowflake);
+	setSnowflakeAngle(snowflake);
 }
 
 function getBackgroundColor(){
@@ -85,4 +86,15 @@ function getRays(){
 
 function snowflakeRotate(snowflake, rays){
     snowflake.rotate((centerLengthConstant * Math.PI) / rays);;
+}
+
+function setSnowflakeAngle(snowflake){
+	let snowflakeAngle = document.getElementById("snowflake-angle").value;
+	let degrees = 360 - snowflakeAngle;
+	
+	snowflake.rotate(degreesToRadians(degrees));
+}
+
+function degreesToRadians(degrees){
+	return (degrees * Math.PI) / 180;
 }
