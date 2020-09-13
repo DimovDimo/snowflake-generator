@@ -90,7 +90,7 @@ function snowflakeRotate(snowflake, rays){
 
 function setSnowflakeAngle(snowflake){
 	let snowflakeAngle = document.getElementById("snowflake-angle").value;
-	let degrees = 360 - snowflakeAngle;
+	let degrees = -snowflakeAngle;
 	
 	snowflake.rotate(degreesToRadians(degrees));
 }
