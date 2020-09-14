@@ -18,6 +18,15 @@ function change() {
 	let splits = getSplits();
 	let angle = getAngle();
 	let rays = getRays();
+
+	function raysIterations(snowflake, rays){
+		for (let i = 1; i < rays; i++) {
+			paintRay(0);
+			snowflakeRotate(snowflake, rays);
+		}
+	}
+	
+	raysIterations(snowflake, rays);
 }
 
 change();
