@@ -27,6 +27,12 @@ function change() {
 	}
 	
 	raysIterations(snowflake, rays);
+
+	function paintRay(iteration) {
+    	if(isClosePaintRay(iteration, iterations)) {
+    		return;
+		}
+	}
 }
 
 change();
@@ -106,4 +112,8 @@ function setSnowflakeAngle(snowflake){
 
 function degreesToRadians(degrees){
 	return (degrees * Math.PI) / 180;
+}
+
+function isClosePaintRay(iteration, iterations){
+	return iteration > iterations;
 }
