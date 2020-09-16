@@ -87,12 +87,13 @@ function getBackgroundColor(){
 
 function setBackgroundColor(canvas, snowflake){
 	snowflake.fillStyle = getBackgroundColor();
+	snowflake.strokeStyle = getSnowflakeColor();
 	
 	xCoordinate = -canvas.width;
 	yCoordinate = -canvas.height;
 	width = canvas.width * centerLengthConstant;
 	height = canvas.height * centerLengthConstant;	
-	snowflake.fillRect(xCoordinate, yCoordinate, width, height);	
+	snowflake.fillRect(xCoordinate, yCoordinate, width, height);
 }
 
 function getRays(){
@@ -116,4 +117,8 @@ function degreesToRadians(degrees){
 
 function isClosePaintRay(iteration, iterations){
 	return iteration > iterations;
+}
+
+function getSnowflakeColor(){
+    return document.getElementById("snowflake-color").value;
 }
