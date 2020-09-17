@@ -88,6 +88,7 @@ function getBackgroundColor(){
 function setBackgroundColor(canvas, snowflake){
 	snowflake.fillStyle = getBackgroundColor();
 	snowflake.strokeStyle = getSnowflakeColor();
+	snowflake.lineWidth = getLineWidth();
 	
 	xCoordinate = -canvas.width;
 	yCoordinate = -canvas.height;
@@ -121,4 +122,8 @@ function isClosePaintRay(iteration, iterations){
 
 function getSnowflakeColor(){
     return document.getElementById("snowflake-color").value;
+}
+
+function getLineWidth(){
+    return document.getElementById("line-width").value;
 }
