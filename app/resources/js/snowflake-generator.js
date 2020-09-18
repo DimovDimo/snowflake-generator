@@ -78,7 +78,9 @@ function getAngle(){
 function snowflakeStyle(canvas, snowflake) {
 	centerSnowflake(canvas, snowflake);
 	setBackgroundColor(canvas, snowflake);
+	setSnowflakeColor(snowflake);
 	setSnowflakeAngle(snowflake);
+	setLineWidth(snowflake);
 }
 
 function getBackgroundColor(){
@@ -87,8 +89,6 @@ function getBackgroundColor(){
 
 function setBackgroundColor(canvas, snowflake){
 	snowflake.fillStyle = getBackgroundColor();
-	snowflake.strokeStyle = getSnowflakeColor();
-	snowflake.lineWidth = getLineWidth();
 	
 	xCoordinate = -canvas.width;
 	yCoordinate = -canvas.height;
@@ -120,10 +120,12 @@ function isClosePaintRay(iteration, iterations){
 	return iteration > iterations;
 }
 
-function getSnowflakeColor(){
-    return document.getElementById("snowflake-color").value;
+function setSnowflakeColor(snowflake){
+	snowflakeColor = document.getElementById("snowflake-color").value;
+    snowflake.strokeStyle = snowflakeColor;
 }
 
-function getLineWidth(){
-    return document.getElementById("line-width").value;
+function setLineWidth(snowflake){
+	lineWidth = document.getElementById("line-width").value;
+    snowflake.lineWidth = lineWidth;
 }
