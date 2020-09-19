@@ -32,6 +32,8 @@ function change() {
     	if(isClosePaintRay(iteration, iterations)) {
     		return;
 		}
+
+		snowflake.beginPath();
 	}
 }
 
