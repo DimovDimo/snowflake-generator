@@ -34,6 +34,7 @@ function change() {
 		}
 
 		snowflake.beginPath();
+		snowflakeRays(snowflake);
 	}
 }
 
@@ -92,15 +93,15 @@ function getBackgroundColor(){
 function setBackgroundColor(canvas, snowflake){
 	snowflake.fillStyle = getBackgroundColor();
 	
-	xCoordinate = -canvas.width;
-	yCoordinate = -canvas.height;
-	width = canvas.width * centerLengthConstant;
-	height = canvas.height * centerLengthConstant;	
+	let xCoordinate = -canvas.width;
+	let yCoordinate = -canvas.height;
+	let width = canvas.width * centerLengthConstant;
+	let height = canvas.height * centerLengthConstant;	
 	snowflake.fillRect(xCoordinate, yCoordinate, width, height);
 }
 
 function getRays(){
-    return document.getElementById("rays").value;
+    return document.getElementById("rays-count").value;
 }
 
 function snowflakeRotate(snowflake, rays){
@@ -123,11 +124,18 @@ function isClosePaintRay(iteration, iterations){
 }
 
 function setSnowflakeColor(snowflake){
-	snowflakeColor = document.getElementById("snowflake-color").value;
+	let snowflakeColor = document.getElementById("snowflake-color").value;
     snowflake.strokeStyle = snowflakeColor;
 }
 
 function setLineWidth(snowflake){
-	lineWidth = document.getElementById("line-width").value;
+	let lineWidth = document.getElementById("line-width").value;
     snowflake.lineWidth = lineWidth;
+}
+
+function snowflakeRays(snowflake){
+	let raysBasis = document.getElementById("rays-basis").value;
+	let raysRotation = document.getElementById("rays-rotation").value;
+	
+	snowflake.moveTo(raysBasis, raysRotation);
 }
