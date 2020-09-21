@@ -134,6 +134,11 @@ function setLineWidth(snowflake){
 }
 
 function snowflakeRays(snowflake){
+	snowflakeMove(snowflake);
+	//TODO: Rays
+}
+
+function snowflakeMove(snowflake){
 	let raysBasis = document.getElementById("rays-basis").value;
 	let raysRotation = document.getElementById("rays-rotation").value;
 	
