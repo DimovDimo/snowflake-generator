@@ -135,7 +135,7 @@ function setLineWidth(snowflake){
 
 function snowflakeRays(snowflake){
 	snowflakeMove(snowflake);
-	//TODO: Rays
+	snowflakeLine(snowflake);
 }
 
 function snowflakeMove(snowflake){
@@ -143,4 +143,11 @@ function snowflakeMove(snowflake){
 	let raysRotation = document.getElementById("rays-rotation").value;
 	
 	snowflake.moveTo(raysBasis, raysRotation);
+}
+
+function snowflakeLine(snowflake){
+	let raysLength = document.getElementById("rays-length").value;
+	let raysDisplacement = document.getElementById("rays-displacement").value;
+	
+	snowflake.lineTo(raysLength, raysDisplacement);
 }
