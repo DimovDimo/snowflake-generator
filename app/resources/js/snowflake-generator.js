@@ -33,8 +33,7 @@ function change() {
     		return;
 		}
 
-		snowflake.beginPath();
-		snowflakeRays(snowflake);
+		snowflakeDraw(snowflake);
 	}
 }
 
@@ -150,4 +149,10 @@ function snowflakeLine(snowflake){
 	let raysDisplacement = document.getElementById("rays-displacement").value;
 	
 	snowflake.lineTo(raysLength, raysDisplacement);
+}
+
+function snowflakeDraw(snowflake){
+	snowflake.beginPath();
+	snowflakeRays(snowflake);
+	snowflake.stroke();
 }
