@@ -34,6 +34,14 @@ function change() {
 		}
 
 		snowflakeDraw(snowflake);
+
+		function paintRecursion(){
+			for (let i = 1; i < splits; i++) {
+				//TODO
+	        }
+	    }
+	   
+	    paintRecursion();
 	}
 }
 
