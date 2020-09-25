@@ -36,7 +36,7 @@ function change() {
 		snowflakeDraw(snowflake);
 
 		function paintRecursion(){
-			for (let i = 1; i < splits; i++) {
+			for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
 				//TODO
 	        }
 	    }
@@ -163,4 +163,8 @@ function snowflakeDraw(snowflake){
 	snowflake.beginPath();
 	snowflakeRays(snowflake);
 	snowflake.stroke();
+}
+
+function getStartSplits(){
+    return document.getElementById("start-splits").value;
 }
