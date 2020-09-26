@@ -37,7 +37,7 @@ function change() {
 
 		function paintRecursion(){
 			for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
-				//TODO
+				snowflake.save();
 	        }
 	    }
 	   
@@ -167,4 +167,8 @@ function snowflakeDraw(snowflake){
 
 function getStartSplits(){
     return document.getElementById("start-splits").value;
+}
+
+function getOffset(){
+    return document.getElementById("rays-offset").value;
 }
