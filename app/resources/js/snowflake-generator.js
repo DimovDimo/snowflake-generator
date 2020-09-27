@@ -172,3 +172,7 @@ function getStartSplits(){
 function getOffset(){
     return document.getElementById("rays-offset").value;
 }
+
+function getSpin(){
+    return document.getElementById("rays-spin").value;
+}
