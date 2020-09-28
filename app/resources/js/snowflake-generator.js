@@ -18,6 +18,8 @@ function change() {
 	let splits = getSplits();
 	let angle = getAngle();
 	let rays = getRays();
+	let offset = getOffset();
+	let spin = getSpin();
 
 	function raysIterations(snowflake, rays){
 		for (let i = 1; i < rays; i++) {
@@ -38,6 +40,9 @@ function change() {
 		function paintRecursion(){
 			for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
 				snowflake.save();
+				
+				let snowflakeTranslate = getSnowflakeTranslate(startSplits, splits, offset);
+				snowflake.translate(snowflakeTranslate, spin);
 	        }
 	    }
 	   
@@ -175,4 +180,8 @@ function getOffset(){
 
 function getSpin(){
     return document.getElementById("rays-spin").value;
+}
+
+function getSnowflakeTranslate(startSplits, splits, offset){
+	return (offset * startSplits) / splits;
 }
