@@ -43,6 +43,14 @@ function change() {
 				
 				let snowflakeTranslate = getSnowflakeTranslate(startSplits, splits, offset);
 				snowflake.translate(snowflakeTranslate, spin);
+
+				let scaleWidthPercent = document.getElementById("scale-width").value;
+				let scaleHeightPercent = document.getElementById("scale-height").value;
+
+				let scaleWidth = scaleWidthPercent / 100;
+				let scaleHeight = scaleHeightPercent / 100;
+			
+				snowflake.scale(scaleWidth, scaleHeight);
 	        }
 	    }
 	   
