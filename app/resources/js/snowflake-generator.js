@@ -47,8 +47,8 @@ function change() {
 				let scaleWidthPercent = document.getElementById("scale-width").value;
 				let scaleHeightPercent = document.getElementById("scale-height").value;
 
-				let scaleWidth = scaleWidthPercent / 100;
-				let scaleHeight = scaleHeightPercent / 100;
+				let scaleWidth = getScale(scaleWidthPercent);
+				let scaleHeight = getScale(scaleHeightPercent);
 			
 				snowflake.scale(scaleWidth, scaleHeight);
 	        }
@@ -192,4 +192,8 @@ function getSpin(){
 
 function getSnowflakeTranslate(startSplits, splits, offset){
 	return (offset * startSplits) / splits;
+}
+
+function getScale(percent){
+	return percent / 100;
 }
