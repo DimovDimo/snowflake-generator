@@ -51,6 +51,18 @@ function change() {
 				let scaleHeight = getScale(scaleHeightPercent);
 			
 				snowflake.scale(scaleWidth, scaleHeight);
+
+				snowflake.save();    		
+    			snowflake.rotate(angle);
+    			paintRay(iteration + 1);    		
+    			snowflake.restore();
+    			
+    			snowflake.save();    		
+    			snowflake.rotate(-angle);
+    			paintRay(iteration + 1);    		
+    			snowflake.restore();
+    			
+    			snowflake.restore();
 	        }
 	    }
 	   
