@@ -16,7 +16,7 @@ function change() {
 	
     let iterations = getIterations();
 	let splits = getSplits();
-	let angle = getAngle();
+	let angle = getAngle();	
 	let rays = getRays();
 	let offset = getOffset();
 	let spin = getSpin();
@@ -30,44 +30,48 @@ function change() {
 	
 	raysIterations(snowflake, rays);
 
-	function paintRay(iteration) {
+
+    function paintRay(iteration) {
     	if(isClosePaintRay(iteration, iterations)) {
     		return;
-		}
-
+    	}
+		
 		snowflakeDraw(snowflake);
-
-		function paintRecursion(){
-			for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
-				snowflake.save();
-				
-				let snowflakeTranslate = getSnowflakeTranslate(startSplits, splits, offset);
-				snowflake.translate(snowflakeTranslate, spin);
-
-				let scaleWidthPercent = document.getElementById("scale-width").value;
-				let scaleHeightPercent = document.getElementById("scale-height").value;
-
-				let scaleWidth = getScale(scaleWidthPercent);
-				let scaleHeight = getScale(scaleHeightPercent);
+   
+    function paintRecursion(){
+	    for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
+            snowflake.save();
 			
-				snowflake.scale(scaleWidth, scaleHeight);
+			let snowflakeTranslate = getSnowflakeTranslate(startSplits, splits, offset);
+			snowflake.translate(snowflakeTranslate, spin);
+      
+			let scaleWidthPercent = document.getElementById("scale-width").value;
+			let scaleHeightPercent = document.getElementById("scale-height").value;
+			
+			let scaleWidth = getScale(scaleWidthPercent);
+			let scaleHeight = getScale(scaleHeightPercent);
+			
+			snowflake.scale(scaleWidth, scaleHeight);
+			
+    		snowflake.save();    		
+    		snowflake.rotate(angle);
+    		paintRay(iteration + 1);    		
+    		snowflake.restore();
+    		
+    		snowflake.save();    		
+    		snowflake.rotate(-angle);
+    		paintRay(iteration + 1);    		
+    		snowflake.restore();
+    		
+    		snowflake.restore();
+        }
+    }
+	
+    paintRecursion();
+}
 
-				snowflake.save();    		
-    			snowflake.rotate(angle);
-    			paintRay(iteration + 1);    		
-    			snowflake.restore();
-    			
-    			snowflake.save();    		
-    			snowflake.rotate(-angle);
-    			paintRay(iteration + 1);    		
-    			snowflake.restore();
-    			
-    			snowflake.restore();
-	        }
-	    }
-	   
-	    paintRecursion();
-	}
+paintRay(0);
+
 }
 
 change();
