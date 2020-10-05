@@ -1,4 +1,5 @@
 const centerLengthConstant = 2;
+const snowflakeLineConstant = "round";
 
 function changeEvent() {
     let container = document.getElementById("container");
@@ -120,6 +121,7 @@ function snowflakeStyle(canvas, snowflake) {
 	setSnowflakeColor(snowflake);
 	setSnowflakeAngle(snowflake);
 	setLineWidth(snowflake);
+	setLineCap(snowflake);
 }
 
 function getBackgroundColor(){
@@ -167,6 +169,10 @@ function setSnowflakeColor(snowflake){
 function setLineWidth(snowflake){
 	let lineWidth = document.getElementById("line-width").value;
     snowflake.lineWidth = lineWidth;
+}
+
+function setLineCap(snowflake){
+	snowflake.lineCap = snowflakeLineConstant;
 }
 
 function snowflakeRays(snowflake){
