@@ -32,8 +32,8 @@
                 <input id="background" type="color" value="#000000">
 				Snowflake
                 <input id="snowflake-color" type="color" value="#ffffff">
-            </div>
-			<div>
+                Line width:
+                <input id="line-width" type="number" min="1"  value="3">
                 Snowflake angle:
                 <input id="snowflake-angle" type="number" value="90">
             </div>
@@ -43,14 +43,8 @@
                 <input id="splits" type="number" min="0" value="2">
 				Start from
                 <input id="start-splits" type="number" min="0" value="1">
-            </div>
-			<div>
-                Iterations:
+                Iterations
                 <input id="iterations" type="number" min="1" value="4">
-            </div>
-			<div>
-                Angle:
-                <input id="angle" type="number" value="120">
             </div>
 			<div>
                 Rays:
@@ -58,20 +52,18 @@
                 <input id="rays-count" type="number" min="1" value="6">
 				Basis
                 <input id="rays-basis" type="number" value="0">
+                Angle:
+                <input id="angle" type="number" value="120">
 				Rotation
                 <input id="rays-rotation" type="number" value="0">
 				Length
                 <input id="rays-length" type="number" value="400">
                 Offset
                 <input id="rays-offset" type="number" value="400">
-				Displacement
-                <input id="rays-displacement" type="number" value="0">				
 				Spin
-                <input id="rays-spin" type="number" value="0">
-            </div>
-			<div>
-                Line width:
-                <input id="line-width" type="number" min="1"  value="3">
+                <input id="rays-spin" type="number" value="0">                
+				Displacement
+                <input id="rays-displacement" type="number" value="0">
             </div>
 		</form>
         <canvas id="snowflake-generator"></canvas>
