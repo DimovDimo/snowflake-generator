@@ -44,14 +44,7 @@ function change() {
 				snowflake.save();
 
 				snowflakeTranslateSpin(startSplits, splits, offset, snowflake, spin);
-
-				let scaleWidthPercent = document.getElementById("scale-width").value;
-				let scaleHeightPercent = document.getElementById("scale-height").value;
-
-				let scaleWidth = getScale(scaleWidthPercent);
-				let scaleHeight = getScale(scaleHeightPercent);
-
-				snowflake.scale(scaleWidth, scaleHeight);
+				snowflakeScale(snowflake);
 
 				snowflake.save();
 				snowflake.rotate(angle);
@@ -74,6 +67,16 @@ function change() {
 }
 
 change();
+
+function snowflakeScale(snowflake) {
+	let scaleWidthPercent = document.getElementById("scale-width").value;
+	let scaleHeightPercent = document.getElementById("scale-height").value;
+
+	let scaleWidth = getScale(scaleWidthPercent);
+	let scaleHeight = getScale(scaleHeightPercent);
+
+	snowflake.scale(scaleWidth, scaleHeight);
+}
 
 function snowflakeTranslateSpin(startSplits, splits, offset, snowflake, spin) {
 	let snowflakeTranslate = getSnowflakeTranslate(startSplits, splits, offset);
