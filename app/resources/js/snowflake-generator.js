@@ -46,15 +46,8 @@ function change() {
 				snowflakeTranslateSpin(startSplits, splits, offset, snowflake, spin);
 				snowflakeScale(snowflake);
 
-				snowflake.save();
-				snowflake.rotate(angle);
-				paintRay(iteration + 1);
-				snowflake.restore();
-
-				snowflake.save();
-				snowflake.rotate(-angle);
-				paintRay(iteration + 1);
-				snowflake.restore();
+				snowflakeRecursion(snowflake, angle, paintRay, iteration);
+				snowflakeRecursion(snowflake, -angle, paintRay, iteration);
 
 				snowflake.restore();
 			}
@@ -67,6 +60,13 @@ function change() {
 }
 
 change();
+
+function snowflakeRecursion(snowflake, angle, paintRay, iteration) {
+	snowflake.save();
+	snowflake.rotate(angle);
+	paintRay(iteration + 1);
+	snowflake.restore();
+}
 
 function snowflakeScale(snowflake) {
 	let scaleWidthPercent = document.getElementById("scale-width").value;
