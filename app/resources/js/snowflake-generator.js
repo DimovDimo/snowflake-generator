@@ -16,11 +16,7 @@ function change() {
 	snowflakeStyle(canvas, snowflake);
 
 	let iterations = getIterations();
-	let splits = getSplits();
-	let angle = getAngle();
 	let rays = getRays();
-	let offset = getOffset();
-	let spin = getSpin();
 
 	function raysIterations(snowflake, rays) {
 		for (let i = 1; i < rays; i++) {
@@ -40,6 +36,11 @@ function change() {
 		snowflakeDraw(snowflake);
 
 		function paintRecursion() {
+			let splits = getSplits();
+			let angle = getAngle();
+			let offset = getOffset();
+			let spin = getSpin();
+
 			for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
 				snowflake.save();
 
