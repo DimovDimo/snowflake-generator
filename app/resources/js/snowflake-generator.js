@@ -1,3 +1,4 @@
+const firstIterationConstant = 0;
 const centerLengthConstant = 2;
 const snowflakeLineConstant = "round";
 
@@ -57,7 +58,7 @@ function change() {
 		paintRecursion();
 	}
 
-	paintRay(0);
+	paintRay(firstIterationConstant);
 }
 
 change();
