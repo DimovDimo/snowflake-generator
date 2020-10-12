@@ -19,15 +19,7 @@ function change() {
 	let iterations = getIterations();
 	let rays = getRays();
 
-	function raysIterations(snowflake, rays) {
-		for (let i = 1; i < rays; i++) {
-			paintRay(0);
-			snowflakeRotate(snowflake, rays);
-		}
-	}
-
-	raysIterations(snowflake, rays);
-
+	rotateIterations(paintRay, snowflake, rays);
 
 	function paintRay(iteration) {
 		if (isClosePaintRay(iteration, iterations)) {
@@ -62,6 +54,17 @@ function change() {
 }
 
 change();
+
+function rotateIterations(paintRay, snowflake, rays) {
+	function raysIterations(snowflake, rays) {
+		for (let i = 1; i < rays; i++) {
+			paintRay(0);
+			snowflakeRotate(snowflake, rays);
+		}
+	}
+
+	raysIterations(snowflake, rays);
+}
 
 function snowflakeRecursion(snowflake, angle, paintRay, iteration) {
 	snowflake.save();
