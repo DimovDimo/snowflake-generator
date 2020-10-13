@@ -28,32 +28,36 @@ function change() {
 
 		snowflakeDraw(snowflake);
 
-		function paintRecursion() {
-			let splits = getSplits();
-			let angle = getAngle();
-			let offset = getOffset();
-			let spin = getSpin();
-
-			for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
-				snowflake.save();
-
-				snowflakeTranslateSpin(startSplits, splits, offset, snowflake, spin);
-				snowflakeScale(snowflake);
-
-				snowflakeRecursion(snowflake, angle, paintRay, iteration);
-				snowflakeRecursion(snowflake, -angle, paintRay, iteration);
-
-				snowflake.restore();
-			}
-		}
-
-		paintRecursion();
+		paintFlake(snowflake, paintRay, iteration);
 	}
 
 	paintRay(firstIterationConstant);
 }
 
 change();
+
+function paintFlake(snowflake, paintRay, iteration) {
+	function paintRecursion() {
+		let splits = getSplits();
+		let angle = getAngle();
+		let offset = getOffset();
+		let spin = getSpin();
+
+		for (let startSplits = getStartSplits(); startSplits < splits; startSplits++) {
+			snowflake.save();
+
+			snowflakeTranslateSpin(startSplits, splits, offset, snowflake, spin);
+			snowflakeScale(snowflake);
+
+			snowflakeRecursion(snowflake, angle, paintRay, iteration);
+			snowflakeRecursion(snowflake, -angle, paintRay, iteration);
+
+			snowflake.restore();
+		}
+	}
+
+	paintRecursion();
+}
 
 function rotateIterations(paintRay, snowflake, rays) {
 	function raysIterations(snowflake, rays) {
