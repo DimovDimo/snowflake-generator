@@ -17,9 +17,8 @@ function change() {
 	snowflakeStyle(canvas, snowflake);
 
 	let iterations = getIterations();
-	let rays = getRays();
 
-	rotateIterations(paintRay, snowflake, rays);
+	rotateIterations(paintRay, snowflake);
 
 	function paintRay(iteration) {
 		if (isClosePaintRay(iteration, iterations)) {
@@ -27,7 +26,6 @@ function change() {
 		}
 
 		snowflakeDraw(snowflake);
-
 		paintFlake(snowflake, paintRay, iteration);
 	}
 
@@ -59,15 +57,17 @@ function paintFlake(snowflake, paintRay, iteration) {
 	paintRecursion();
 }
 
-function rotateIterations(paintRay, snowflake, rays) {
-	function raysIterations(snowflake, rays) {
+function rotateIterations(paintRay, snowflake) {
+	let rays = getRays();
+
+	function raysIterations(snowflake) {
 		for (let i = 1; i < rays; i++) {
 			paintRay(0);
 			snowflakeRotate(snowflake, rays);
 		}
 	}
 
-	raysIterations(snowflake, rays);
+	raysIterations(snowflake);
 }
 
 function snowflakeRecursion(snowflake, angle, paintRay, iteration) {
