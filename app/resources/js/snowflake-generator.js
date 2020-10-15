@@ -16,11 +16,14 @@ function change() {
 	let snowflake = getSnowflake(canvas);
 	snowflakeStyle(canvas, snowflake);
 
-	let iterations = getIterations();
+	raysIterations(snowflake);
+}
 
-	rotateIterations(paintRay, snowflake);
+change();
 
+function raysIterations(snowflake) {
 	function paintRay(iteration) {
+		let iterations = getIterations();
 		if (isClosePaintRay(iteration, iterations)) {
 			return;
 		}
@@ -29,10 +32,9 @@ function change() {
 		paintFlake(snowflake, paintRay, iteration);
 	}
 
+	rotateIterations(paintRay, snowflake);
 	paintRay(firstIterationConstant);
 }
-
-change();
 
 function paintFlake(snowflake, paintRay, iteration) {
 	function paintRecursion() {
