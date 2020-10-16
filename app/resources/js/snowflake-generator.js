@@ -1,5 +1,7 @@
 const firstIterationConstant = 0;
 const centerLengthConstant = 2;
+const percentConstant = 100;
+const degreesToRadiansConstant = 180;
 const snowflakeLineConstant = "round";
 
 function changeEvent() {
@@ -64,7 +66,7 @@ function rotateIterations(paintRay, snowflake) {
 
 	function raysIterations(snowflake) {
 		for (let i = 1; i < rays; i++) {
-			paintRay(0);
+			paintRay(firstIterationConstant);
 			snowflakeRotate(snowflake, rays);
 		}
 	}
@@ -171,7 +173,7 @@ function setSnowflakeAngle(snowflake) {
 }
 
 function degreesToRadians(degrees) {
-	return (degrees * Math.PI) / 180;
+	return (degrees * Math.PI) / degreesToRadiansConstant;
 }
 
 function isClosePaintRay(iteration, iterations) {
@@ -234,5 +236,5 @@ function getSnowflakeTranslate(startSplits, splits, offset) {
 }
 
 function getScale(percent) {
-	return percent / 100;
+	return percent / percentConstant;
 }
