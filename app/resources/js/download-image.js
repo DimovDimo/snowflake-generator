@@ -1,14 +1,5 @@
-function changeEventDownload() {
-	let container = document.getElementById("container");
-	container.addEventListener("change", changeDownload);
-};
+document.getElementById("download-image").addEventListener("click", downloadImage);
 
-changeEventDownload();
-
-function changeDownload() {
-	let canvas = document.getElementById("snowflake-generator");
-    let img = canvas.toDataURL("image/png");
-    //TODO
+function downloadImage() {
+	
 }
-
-changeDownload();
