@@ -1,11 +1,18 @@
-document.getElementById("download-image").addEventListener("click", downloadImage);
-
-function downloadImage() {
-	//window.stop();
-}
+document.getElementById("download-image").addEventListener("click", download);
 
 function download() {
-    let canvasElement = document.getElementById("snowflake-generator");
+    let link = document.createElement("a");
+    link.download = "snowflake";
+
     let type = "image/png";
-    let url = canvasElement.toDataURL(type);
+    let canvasElement = document.getElementById("snowflake-generator");
+    let image = canvasElement.toDataURL(type);
+    link.href = image;
+
+    let datasetDownload = [type, link.download, link.href];
+    link.dataset.downloadurl = datasetDownload.join(":");
+
+    document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
 }
