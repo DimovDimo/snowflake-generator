@@ -2,7 +2,7 @@ document.getElementById("download-image").addEventListener("click", download);
 
 function download() {
     let link = document.createElement("a");
-    link.download = "snowflake";
+    link.download = document.getElementById("file-name").value;
 
     let type = "image/png";
     let canvasElement = document.getElementById("snowflake-generator");
