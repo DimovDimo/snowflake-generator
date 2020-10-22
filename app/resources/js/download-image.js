@@ -4,7 +4,7 @@ function download() {
     let link = document.createElement("a");
     link.download = document.getElementById("file-name").value;
 
-    let type = "image/png";
+    let type = document.querySelector('input[name="image-type"]:checked').value;
     let canvasElement = document.getElementById("snowflake-generator");
     let image = canvasElement.toDataURL(type);
     link.href = image;
