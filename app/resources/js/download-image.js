@@ -3,10 +3,10 @@ const imageTypeConstant = "image/png";
 document.getElementById("download-image").addEventListener("click", download);
 
 function download() {
-    let link = document.createElement("a");
-    link.download = document.getElementById("file-name").value;
+    let link = createDownloadLink();
+    link.download = getFileName();
 
-    let canvas = document.getElementById("snowflake-generator");
+    let canvas = getCanvas();
     let image = canvas.toDataURL(imageTypeConstant);
     link.href = image;
 
@@ -16,4 +16,16 @@ function download() {
     document.body.appendChild(link);
 	link.click();
 	document.body.removeChild(link);
+}
+
+function getFileName() {
+	return document.getElementById("file-name").value;
+}
+
+function getCanvas() {
+	return document.getElementById("snowflake-generator");
+}
+
+function createDownloadLink() {
+	return document.createElement("a");
 }
