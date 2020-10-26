@@ -4,7 +4,7 @@ document.getElementById("download-image").addEventListener("click", download);
 
 function download() {
     let link = createDownloadLink();
-    link.download = getFileName();
+    setFileName(link);
 
     let canvas = getCanvas();
     let image = canvas.toDataURL(imageTypeConstant);
@@ -18,8 +18,8 @@ function download() {
 	document.body.removeChild(link);
 }
 
-function getFileName() {
-	return document.getElementById("file-name").value;
+function setFileName(link) {
+	link.download = document.getElementById("file-name").value;
 }
 
 function getCanvas() {
