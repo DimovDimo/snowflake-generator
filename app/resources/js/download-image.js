@@ -5,10 +5,7 @@ document.getElementById("download-image").addEventListener("click", download);
 function download() {
     let link = createDownloadLink();
     setFileName(link);
-
-    let canvas = getCanvas();
-    let image = canvas.toDataURL(imageTypeConstant);
-    link.href = image;
+    setImage(link);
 
     let datasetDownload = [imageTypeConstant, link.download, link.href];
     link.dataset.downloadurl = datasetDownload.join(":");
@@ -16,6 +13,12 @@ function download() {
     document.body.appendChild(link);
 	link.click();
 	document.body.removeChild(link);
+}
+
+function setImage(link) {
+    let canvas = getCanvas();
+    let image = canvas.toDataURL(imageTypeConstant);
+    link.href = image;
 }
 
 function setFileName(link) {
