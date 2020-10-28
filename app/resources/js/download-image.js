@@ -6,13 +6,16 @@ function download() {
     let link = createDownloadLink();
     setFileName(link);
     setImage(link);
-
-    let datasetDownload = [imageTypeConstant, link.download, link.href];
-    link.dataset.downloadurl = datasetDownload.join(":");
+    setDownloadUrl(link);
 
     document.body.appendChild(link);
 	link.click();
 	document.body.removeChild(link);
+}
+
+function setDownloadUrl(link) {
+    let datasetDownload = [imageTypeConstant, link.download, link.href];
+    link.dataset.downloadurl = datasetDownload.join(":");
 }
 
 function setImage(link) {
