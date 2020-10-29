@@ -7,10 +7,13 @@ function download() {
     setFileName(link);
     setImage(link);
     setDownloadUrl(link);
+    linkClick(link);
+}
 
+function linkClick(link) {
     document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 function setDownloadUrl(link) {
