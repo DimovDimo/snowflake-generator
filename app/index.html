@@ -41,9 +41,11 @@
                 <input id="start-splits" type="number" min="0" value="1">
                 Iterations
                 <input id="iterations" type="number" min="1" value="4">
-                Line width:
+            </div>
+            <div>
+                Line width pixels:
                 <input id="line-width" type="number" min="1"  value="3">
-                Snowflake angle:
+                Snowflake angle degrees:
                 <input id="snowflake-angle" type="number" value="90">
             </div>
 			<div>
@@ -52,10 +54,6 @@
                 <input id="rays-count" type="number" min="1" value="6">
 				Basis
                 <input id="rays-basis" type="number" value="0">
-                Angle:
-                <input id="angle" type="number" value="120">
-				Rotation
-                <input id="rays-rotation" type="number" value="0">
 				Length
                 <input id="rays-length" type="number" value="400">
                 Offset
@@ -64,10 +62,15 @@
                 <input id="rays-spin" type="number" value="0">                
 				Displacement
                 <input id="rays-displacement" type="number" value="0">
+                Angle degrees
+                <input id="angle" type="number" value="120">
+				Rotation degrees
+                <input id="rays-rotation" type="number" value="0">
             </div>
             <div>
+                File name:
                 <input type="text" id="file-name" value="snowflake">
-                <button id="download-image" type="button">Download</button> 
+                <button id="download-image" type="button">Download PNG</button> 
             </div>            
 		</form>
         <canvas id="snowflake-generator"></canvas>

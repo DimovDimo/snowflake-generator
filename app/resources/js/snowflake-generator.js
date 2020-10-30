@@ -7,7 +7,7 @@ const snowflakeLineConstant = "round";
 function changeEvent() {
 	let container = document.getElementById("container");
 	container.addEventListener("change", change);
-};
+}
 
 changeEvent();
 
@@ -53,7 +53,7 @@ function paintFlake(snowflake, paintRay, iteration) {
 
 			snowflakeRecursion(snowflake, angle, paintRay, iteration);
 			snowflakeRecursion(snowflake, -angle, paintRay, iteration);
-
+			
 			snowflake.restore();
 		}
 	}
@@ -152,8 +152,10 @@ function setBackgroundColor(canvas, snowflake) {
 
 	let xCoordinate = -canvas.width;
 	let yCoordinate = -canvas.height;
+
 	let width = canvas.width * centerLengthConstant;
 	let height = canvas.height * centerLengthConstant;
+
 	snowflake.fillRect(xCoordinate, yCoordinate, width, height);
 }
 

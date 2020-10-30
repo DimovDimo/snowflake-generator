@@ -28,3 +28,7 @@ footer {
     text-align: center;
     margin: 15px;
 }
+
+#file-name {
+    width: 60px;
+}
